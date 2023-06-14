@@ -1,0 +1,39 @@
+.divTable{
+	border: 1px solid #111111;
+    display: inline-flex; 
+    background-color: #EEE;
+    width: 750px;
+    height: 400px;
+    justify-content: normal;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+}
+
+.photo {
+    height: 398px;
+}
+
+.text {
+    display: table;
+    padding: 10px; 
+    font-family: Helvetica, Arial, sans-serif;
+    color: rgb(4, 86, 119);
+    font-size: 1.3rem;
+}
+
+.btn-new {
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #b454be;
+    box-shadow: 0 5px 0 #643558;
+}
+
+.btn-new:hover {
+    background: #643558;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
