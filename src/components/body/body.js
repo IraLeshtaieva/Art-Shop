@@ -50,6 +50,7 @@ class Body extends Component {
                 </form>
                 
                 <button className="basket" 
+                    data-value={itemsPutedBasket}
                     onClick={this.goToBasket}
                     onMouseEnter={this.addVisitor}>     
                     <i className="fa-solid fa-cart-plus fa-beat color"> {itemsPutedBasket}</i></button>

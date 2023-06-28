@@ -1,4 +1,4 @@
-import './card-magnet.css';
+import './items-to-sell.css';
 import { Component } from 'react';
 
 
@@ -18,7 +18,7 @@ class ItemToSell extends Component {
 
 
   render() {
-    const {onBasket} = this.props;
+    const setItemsList = this.props.onBasket;
     const {photo, type, size, description, price, id} = this.state;
     return (
             <div className="divTable"><img className='photo' src={String(photo)} alt="magnet with view" />
@@ -30,7 +30,7 @@ class ItemToSell extends Component {
                 <li className='text'>
                   <button 
                   className="btn-new btn-new:hover"
-                  onClick={onBasket}
+                  onClick={() => setItemsList(itemsList => [...itemsList, {itemId:id}])}
                   type="button">
                     Put item in basket
                   </button>
