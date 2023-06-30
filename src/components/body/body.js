@@ -5,20 +5,17 @@ class Body extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            saled: 0,
-            items: 25,
             comment: '',
             visitors: 0,
+            likes: 0
         }
     }
 
-    goToBasket = () => {
+    likeUs = () => {
         this.setState(state => ({
-            saled: state.saled + 1,
-            items: state.items - 1,
-
+            likes: state.likes + 1
         }))
-    }
+    } 
 
     addComment = (e) => {
         this.setState({
@@ -32,12 +29,11 @@ class Body extends Component {
         }))
     } 
     render() {
-        const {items, saled, comment, visitors} = this.state;
-        const {itemsPutedBasket} = this.props;
+        const {likes, comment, visitors} = this.state;
+        const counter = (likes>0) ? likes : "";
         return(
             <div className="body">
-                <h5>Общее количетсво изделий: {items} </h5>
-                <h5>Сегодня мы продали: {saled} </h5>
+                <h5>Сегодня мы порадовали: {likes} <i className="fa-solid fa-user"></i> </h5>
                 <h5>Сегодня нас посетили: {visitors} </h5>
                     <div className='comment'>Елена: Каждый день радует магнит на холодильнике</div>
                     <div className='comment'>{comment}</div>
@@ -49,11 +45,14 @@ class Body extends Component {
                         value ={comment} />
                 </form>
                 
-                <button className="basket" 
-                    data-value={itemsPutedBasket}
-                    onClick={this.goToBasket}
+                <button className="like" 
+
+
+                    onClick={this.likeUs}
+                    data-value={likes}
                     onMouseEnter={this.addVisitor}>     
-                    <i className="fa-solid fa-cart-plus fa-beat color"> {itemsPutedBasket}</i></button>
+                    <i className="fa-solid fa-heart fa-beat colored"> {counter}</i></button> 
+                    
             </div>
         )
         }

@@ -5,14 +5,20 @@ import Header from './components/header/header';
 import Body from './components/body/body';
 import Footer from './components/footer/footer';
 import ItemToSell from './components/items-to-sell/ItemsToSell';
+import BasketButton from './components/basket-button/basketButton';
+
 import { useState } from 'react';
+
+
 
 
 
 function App() {
 
   const [itemsList, setItemsList] = useState([]);
-  console.log(itemsList);
+  const [filter, setFilter] = useState("all");
+  
+  console.log(filter);
 
   const items = [
     { photo: require('./item-magnet-1.jpg'), size: "10x15", type: "magnet", price: 11, description: "Beautiful view of the mountain river", id: 1 },
@@ -23,7 +29,14 @@ function App() {
     { photo: require('./item-painting-3.jpg'), size: "15x10", type: "painting", price: 12, description: "Beautiful view of the mountain", id: 6 }
   ]
 
-  const elements = items.map(item => {
+  const visiblePictures = items.filter((picture) => {
+    if (filter === "all") {
+      return true;
+    }
+    return picture.type === filter;
+  });
+
+  const elements = visiblePictures.map(item => {
     return (
       <ItemToSell
         key={item.id}
@@ -43,9 +56,10 @@ function App() {
       <div className="body">
         {elements}
         <Body itemsPutedBasket={itemsList.length} />
+        <BasketButton itemsPutedBasket={itemsList.length}/>
       </div>
       <div className='App-footer'>
-        <Footer />
+        <Footer setFilter={setFilter}/>
         <p className='footer'>
           Welcome to my {<a href="https://instagram.com/smuzi_u_luzi?igshid=NzMyMjgxZWIzNw==">Instagram</a>}.
         </p>

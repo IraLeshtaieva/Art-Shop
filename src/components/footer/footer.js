@@ -2,22 +2,31 @@
 import './footer.css'
 
 
-const Footer = () => {
+const Footer = ({setFilter}) => {
+
+    const active = setFilter === "all";
+    const clazz = active? "btn btn-light" : "btn btn-outline-light";
     return (
         <div className="btn-group">
             <button 
-                className="btn btn-light"
-                type="button">
+                className={clazz}
+                type="button"
+                onClick={() => setFilter("all")}
+                >
                     All pictures
             </button>
             <button 
-                className="btn btn-outline-light"
-                type="button">
+                className={clazz}
+                type="button"
+                onClick={() => setFilter("magnet")}
+                >
                     Magnets
             </button>
             <button 
-                className="btn btn-outline-light"
-                type="button">
+                className={clazz}
+                type="button"
+                onClick={() => setFilter("painting")}
+                >
                     Paintings 
             </button>
         </div>
