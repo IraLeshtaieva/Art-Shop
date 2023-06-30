@@ -26,7 +26,18 @@ function App() {
     { photo: require('./item-magnet-3.jpg'), size: "10x15", type: "magnet", price: 12, description: "Boat on the sea framed by palm leaves", id: 3 },
     { photo: require('./item-painting-1.jpg'), size: "10x15", type: "painting", price: 11, description: "Pink flower", id: 4 },
     { photo: require('./item-painting-2.jpg'), size: "10x15", type: "painting", price: 10, description: "Violett flower", id: 5 },
-    { photo: require('./item-painting-3.jpg'), size: "15x10", type: "painting", price: 12, description: "Beautiful view of the mountain", id: 6 }
+    { photo: require('./item-painting-3.jpg'), size: "15x10", type: "painting", price: 12, description: "Beautiful view of the mountain", id: 6 },
+    { photo: require('./item-postcard-1.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a lighthouse", id: 7 },
+    { photo: require('./item-postcard-2.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a car", id: 8 },
+    { photo: require('./item-postcard-3.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a X-mass tree", id: 9 },
+    { photo: require('./item-postcard-4.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a house in the sea", id: 10 },
+    { photo: require('./item-postcard-5.jpg'), size: "10x15", type: "postcard", price: 10, description: "Birthday postcard with balloons", id: 11 },
+    { photo: require('./item-postcard-6.jpg'), size: "10x15", type: "postcard", price: 10, description: "Carnival postcard with pancakes", id: 12 },
+    { photo: require('./item-postcard-7.jpg'), size: "10x15", type: "postcard", price: 10, description: "Sommer postcard with a house", id: 13 },
+    { photo: require('./item-postcard-8.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with palms", id: 14 },
+    { photo: require('./item-postcard-9.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a coconut", id: 15 },
+    { photo: require('./item-postcard-10.jpg'), size: "10x15", type: "postcard", price: 10, description: "City postcard with a house", id: 16 },
+    { photo: require('./item-postcard-11.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a glass bowl", id: 17 }
   ]
 
   const visiblePictures = items.filter((picture) => {

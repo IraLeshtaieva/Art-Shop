@@ -6,6 +6,7 @@ const Footer = ({setFilter}) => {
 
     const active = setFilter === "all";
     const clazz = active? "btn btn-light" : "btn btn-outline-light";
+    
     return (
         <div className="btn-group">
             <button 
@@ -28,6 +29,13 @@ const Footer = ({setFilter}) => {
                 onClick={() => setFilter("painting")}
                 >
                     Paintings 
+            </button>
+            <button 
+                className={clazz}
+                type="button"
+                onClick={() => setFilter("postcard")}
+                >
+                    Postcards 
             </button>
         </div>
     );

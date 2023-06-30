@@ -5,7 +5,8 @@ const Header = () => {
         <div className="header">
             <h3>
             Looking for a unique gift or want to decorate your interior?
-            Original watercolor magnets and Paintings will improve the mood of you and your friends and add zest to your home</h3>
+            Original watercolor magnets and Paintings will improve the mood of you and your friends and add zest to your home. 
+            Unique postcards will delight your friends and relatives</h3>
         </div>
     )
 }

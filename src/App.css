@@ -25,7 +25,7 @@
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   font-style: italic;
-  color: rgb(83, 43, 110);
+  color: rgb(210, 196, 219);
 }
 
 
@@ -51,7 +51,7 @@
 }
 
 .App-footer {
-  background-color: #d19ace;
+  background-color: #b68db4;
   border-radius: 4px;
   box-shadow: 15px 15px 30px rgba(0,0,0, .15);
   background-position: center;

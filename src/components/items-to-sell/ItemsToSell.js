@@ -19,6 +19,7 @@ class ItemToSell extends Component {
 
   render() {
     const setItemsList = this.props.onBasket;
+    
     const {photo, type, size, description, price, id} = this.state;
     return (
             <div className="divTable"><img className='photo' src={String(photo)} alt="magnet with view" />
