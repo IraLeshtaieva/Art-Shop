@@ -1,0 +1,91 @@
+.body {
+    margin: 0px;
+}
+
+.parent {
+    background-color: #f002dc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #360b53;
+    min-height: 20px;
+    width: 100%;
+}
+
+.content {
+    background-color: #22c7dd;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+}
+
+.menu {
+    background-color: #9ff1a6;
+    height: 100%;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row1 {
+    width: 100%;
+    flex:1;
+    background-color:#f00271;
+}
+
+.row2 {
+    width: 100%;
+    flex:1;
+    background-color:#02c0f0;
+}
+.row3 {
+    width: 100%;
+    flex:1;
+    background-color:#d8f002;
+}
+.row4 {
+    width: 100%;
+    flex:1;
+    background-color:#0206f0;
+}
+.row5 {
+    width: 100%;
+    flex:1;
+    background-color:#f002f0;
+}
+.row6 {
+    width: 100%;
+    flex:1;
+    background-color:#89f002;
+}
+
+
+.page {
+    background-color: #f1f1c5;
+    height: 100%;
+    flex: 3;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; /*переносятся на след строку*/
+    justify-content: space-evenly; /* поделить на один части оставшееся место*/
+}
+
+.tile {
+    background-color:#630330;
+    width: 450px;
+    height: 300px;
+    margin:20px;
+
+}
+
+.footer {
+    background-color: #f5f100;
+    min-height: 20px;
+    width: 100%;
+}
+

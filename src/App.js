@@ -10,15 +10,11 @@ import BasketButton from './components/basket-button/basketButton';
 import { useState } from 'react';
 
 
-
-
-
 function App() {
 
   const [itemsList, setItemsList] = useState([]);
   const [filter, setFilter] = useState("all");
   
-  console.log(filter);
 
   const items = [
     { photo: require('./item-magnet-1.jpg'), size: "10x15", type: "magnet", price: 11, description: "Beautiful view of the mountain river", id: 1 },
@@ -37,7 +33,8 @@ function App() {
     { photo: require('./item-postcard-8.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with palms", id: 14 },
     { photo: require('./item-postcard-9.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a coconut", id: 15 },
     { photo: require('./item-postcard-10.jpg'), size: "10x15", type: "postcard", price: 10, description: "City postcard with a house", id: 16 },
-    { photo: require('./item-postcard-11.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a glass bowl", id: 17 }
+    { photo: require('./item-postcard-11.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a glass bowl", id: 17 },
+    { photo: require('./item-painting-4.jpg'), size: "42x30", type: "painting", price: 35, description: "Landscape with bridge and lily pond(based on Monet)", id: 18 }
   ]
 
   const visiblePictures = items.filter((picture) => {
@@ -64,15 +61,19 @@ function App() {
         <img src={logo2} className="App-logo" alt="logo" />
         <Header />
       </header>
-      <div className="body">
-        {elements}
-        <Body itemsPutedBasket={itemsList.length} />
-        <BasketButton itemsPutedBasket={itemsList.length}/>
+      <div className="App-content">
+        <div className='App-menu'>
+          <Body className='App-menu-row1' itemsPutedBasket={itemsList.length} />
+          <BasketButton className='App-menu-row2' itemsPutedBasket={itemsList.length}/>
+        </div>
+        <div className='App-elements'>
+          <div className='App-tile'>{elements}</div>
+        </div>
       </div>
       <div className='App-footer'>
-        <Footer setFilter={setFilter}/>
+        <Footer setFilter={setFilter} filter={filter}/>
         <p className='footer'>
-          Welcome to my {<a href="https://instagram.com/smuzi_u_luzi?igshid=NzMyMjgxZWIzNw==">Instagram</a>}.
+          Welcome to my {<a href="https://instagram.com/smuzi_u_luzi">Instagram</a>}.
         </p>
       </div>
     </div>

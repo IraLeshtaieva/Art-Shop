@@ -11,6 +11,9 @@
     background-color: white;
     border: 2px solid #64509c; /* Green */
     box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+    /*position: fixed;  Фиксированное положение */
+    bottom: 20%; /* Расстояние сверху */
+    left: 50%;
 }
 
 .color{

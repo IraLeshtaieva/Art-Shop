@@ -29,6 +29,8 @@
     color: white;
     background: #b454be;
     box-shadow: 0 5px 0 #643558;
+    align-items: end; /* не работает потому что гдето инлайн блок
+    display: block;*/
 }
 
 .btn-new:hover {
@@ -37,3 +39,5 @@
     position: relative;
     top: 5px;
 }
+
+

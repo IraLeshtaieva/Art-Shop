@@ -1,0 +1,27 @@
+.body {
+    margin: 0px;
+}
+
+.parent {
+    background-color: #f002dc;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    background-color: #360b53;
+    height: 100%;
+    width: 20px;
+}
+
+.content {
+    background-color: #22c7dd;
+    flex:1;
+}
+
+.footer {
+    background-color: #d9e715;
+    height: 100%;
+    width: 20px;
+}
