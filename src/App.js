@@ -6,6 +6,7 @@ import Body from './components/body/body';
 import Footer from './components/footer/footer';
 import ItemToSell from './components/items-to-sell/ItemsToSell';
 import BasketButton from './components/basket-button/basketButton';
+import FindForm from './components/find-form/findForm';
 
 import { useState } from 'react';
 
@@ -21,7 +22,7 @@ function App() {
     { photo: require('./item-magnet-2.jpg'), size: "10x15", type: "magnet", price: 10, description: "Old city. View of the bridge and the ship floating on the river", id: 2 },
     { photo: require('./item-magnet-3.jpg'), size: "10x15", type: "magnet", price: 12, description: "Boat on the sea framed by palm leaves", id: 3 },
     { photo: require('./item-painting-1.jpg'), size: "10x15", type: "painting", price: 11, description: "Pink flower", id: 4 },
-    { photo: require('./item-painting-2.jpg'), size: "10x15", type: "painting", price: 10, description: "Violett flower", id: 5 },
+    { photo: require('./item-painting-2.jpg'), size: "10x15", type: "painting", price: 11, description: "Violett flower", id: 5 },
     { photo: require('./item-painting-3.jpg'), size: "15x10", type: "painting", price: 12, description: "Beautiful view of the mountain", id: 6 },
     { photo: require('./item-postcard-1.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a lighthouse", id: 7 },
     { photo: require('./item-postcard-2.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a car", id: 8 },
@@ -34,7 +35,8 @@ function App() {
     { photo: require('./item-postcard-9.jpg'), size: "10x15", type: "postcard", price: 10, description: "Nautical postcard with a coconut", id: 15 },
     { photo: require('./item-postcard-10.jpg'), size: "10x15", type: "postcard", price: 10, description: "City postcard with a house", id: 16 },
     { photo: require('./item-postcard-11.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a glass bowl", id: 17 },
-    { photo: require('./item-painting-4.jpg'), size: "42x30", type: "painting", price: 35, description: "Landscape with bridge and lily pond(based on Monet)", id: 18 }
+    { photo: require('./item-painting-4.jpg'), size: "42x30", type: "painting", price: 35, description: "Landscape with bridge and lily pond(based on Monet)", id: 18 },
+    { photo: require('./item-painting-5.jpg'), size: "10x15", type: "painting", price: 11, description: "Pink flower", id: 19 }
   ]
 
   const visiblePictures = items.filter((picture) => {
@@ -50,6 +52,7 @@ function App() {
         key={item.id}
         {...item}
         onBasket={setItemsList}
+        itemsInBasket={itemsList}
       />
     )
   })
@@ -59,12 +62,13 @@ function App() {
     <div className='App'>
       <header className="App-header">
         <img src={logo2} className="App-logo" alt="logo" />
-        <Header />
+        <Header/>
       </header>
       <div className="App-content">
         <div className='App-menu'>
-          <Body className='App-menu-row1' itemsPutedBasket={itemsList.length} />
+          <Body className='App-menu-row1' /> 
           <BasketButton className='App-menu-row2' itemsPutedBasket={itemsList.length}/>
+          <FindForm/>
         </div>
         <div className='App-elements'>
           <div className='App-tile'>{elements}</div>

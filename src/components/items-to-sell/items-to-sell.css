@@ -8,6 +8,7 @@
     margin-bottom: 20px;
     margin-right: 20px;
     box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+    min-width: 700px;
 }
 
 .photo {
@@ -24,20 +25,55 @@
 
 .btn-new {
     border: none;
-    border-radius: 10px;
     text-decoration: none;
     color: white;
-    background: #b454be;
-    box-shadow: 0 5px 0 #643558;
+    background: #9d79a1;
+    box-shadow: 0 5px 0 #473a52;
     align-items: end; /* не работает потому что гдето инлайн блок
     display: block;*/
 }
 
 .btn-new:hover {
-    background: #643558;
+    background: #473a52;
     box-shadow: none;
     position: relative;
     top: 5px;
 }
+
+
+.btn-new-delete {
+    border: none;
+    text-decoration: none;
+    color: white;
+    background: rgb(243, 110, 165);
+    box-shadow: 0 5px 0 rgb(173, 80, 119);
+    align-items: end; /* не работает потому что гдето инлайн блок
+    display: block;*/
+}
+
+.btn-new-delete:hover {
+    background: #473a52;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+
+.buttonField {
+    display: flex;
+    flex-direction: row;
+    background-color:#473a52;
+    height: 70px;
+    width: 170px;
+    margin-top:10px;
+}
+
+.button {
+    margin-top: 10px;
+	width: 5vmin;
+    height: 5vmin;
+    margin-left: 4px;
+}
+
 
 

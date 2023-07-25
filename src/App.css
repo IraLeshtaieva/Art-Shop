@@ -10,7 +10,9 @@
   height: 10vmin;
   margin-top: 10px;
   margin-bottom: 10px;
-  pointer-events:0;
+  width: 10vmin;
+  margin-left:50% ;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,13 +28,9 @@
   background-size: cover;
   display: flex;
   flex-direction: column; /* порядок показания значка и текста */
-  /*justify-content: space-between;
-  font-size: calc(10px + 2vmin);*/
   font-style: italic;
   color: rgb(210, 196, 219);
-  /*min-height: 20px;*/
   width: 100%;
-  /*position: fixed; */
 }
 
 
@@ -46,7 +44,7 @@
 }
 
 .App-content {
-  height: 100%;
+  min-height: 0;
   flex: 1;
   overflow-y: auto; /*без этого футер подниматеся??*/
   display: flex;
@@ -74,7 +72,7 @@
 }
 
 .App-elements {
-  flex:3;
+  flex:7;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -82,9 +80,11 @@
 }
 
 .App-tile {
-  width: 450px;
-  height: 300px;
   margin:20px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
 }
 
 .footer {
@@ -101,7 +101,6 @@
 
 .App-footer {
   background-color: #b68db4;
-  border-radius: 4px;
   box-shadow: 15px 15px 30px rgba(0,0,0, .15);
   background-position: center;
   background-size: cover;
@@ -111,7 +110,6 @@
   /*font-size: calc(10px + 2vmin);*/
   font-style: italic;
   color: rgb(83, 43, 110);
-  margin-top: 20px;
   /*position: fixed;  Фиксированное положение */
   bottom: 0%; /* Расстояние сверху */
   width: 100%;

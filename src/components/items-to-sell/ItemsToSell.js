@@ -1,22 +1,12 @@
 import './items-to-sell.css';
-import { Component } from 'react';
 
+import { useState } from 'react';
 
-class ItemToSell extends Component {
+const ItemToSell = ({photo, type, size, description, price, id, itemsInBasket, onBasket}) => {
 
-  constructor (props) {
-    super(props);
-    this.state = {
-        photo: props.photo,
-        type: props.type,
-        size: props.size,
-        description: props.description,
-        price: props.price,
-        id: props.id
-    }
-  }
+const [counter, setCounter] = useState(1);
 
-  toUrl = (type) => {
+const toUrl = (type) => {
     if (type === "magnet") {
       return "https://en.wikipedia.org/wiki/Refrigerator_magnet"
     } 
@@ -29,32 +19,76 @@ class ItemToSell extends Component {
       return "https://en.wikipedia.org/wiki/Postcard"
     }
   }
+   
+const isItemInBasket = itemsInBasket.find(element => element.itemId===id);
+const text =  isItemInBasket === undefined ? "Put item in" : "Delete from";
+const clazz = isItemInBasket === undefined ? "btn-new" : "btn-new-delete";
 
-
-  render() {
-    const setItemsList = this.props.onBasket;
-    
-    const {photo, type, size, description, price, id} = this.state;
+function showButton(isItemInBasket) { //непонятно со скобочками и аргументами
+  if (isItemInBasket !== undefined) {  //ПОЧЕМУ НАОБОРОТ????
     return (
+      <div className="buttonField">
+                <button 
+                    className="button"
+                    onClick={addNumber}
+                    type="button">
+                        + 
+                </button>
+                <button 
+                    className="button"> {counter} </button>
+                <button 
+                    className="button"
+                    onClick={deleteNumber}
+                    type="button">
+                        - 
+                </button>
+                </div>
+    )
+    } else {
+      return null;
+    }
+  }
 
-            <div className="divTable"><img className='photo' src={String(photo)} alt="magnet with view" />
-              <ul>
-                <li className='text'>Type: <a href={this.toUrl(type)}>{type}</a> </li>    
-                <li className='text'>Size: {size +"cm"} </li>  
-                <li className='text'>Description: {description} </li>  
-                <li className='text'>Price: {price +"$"} </li> 
-                <li className='text'>
-                  <button 
-                  className="btn-new btn-new:hover"
-                  onClick={() => setItemsList(itemsList => [...itemsList, {itemId:id}])}
-                  type="button">
-                    Put item in <i className="fa-solid fa-cart-plus"></i>
-                  </button>
-                </li> 
-              </ul>
-            </div>      
-            )
-            }
+
+
+function onClickAdd() {
+  if (isItemInBasket === undefined) {
+      onBasket(itemsList => [...itemsList, {itemId:id}])
+  } else {
+    onBasket(itemsList => itemsList.filter(element => element.itemId!==id))
+  }
+} 
+
+
+function addNumber() {
+    setCounter(counter => counter + 1);
 }
+
+function deleteNumber() {
+    setCounter(counter => counter - 1);
+}
+      
+  return (
+
+      <div className="divTable"><img className='photo' src={String(photo)} alt="magnet with view" />
+          <ul>
+            <li className='text'>Type: <a href={toUrl(type)}>{type}</a> </li>    
+            <li className='text'>Size: {size +"cm"} </li>  
+            <li className='text'>Description: {description} </li>  
+            <li className='text'>Price: {price +"$"} </li> 
+            <li className='text'>
+              <button 
+                className= {clazz}
+                onClick={onClickAdd}
+                type="button">
+                  {text} <i className="fa-solid fa-cart-plus"></i>
+                </button>
+                {showButton(isItemInBasket)}  
+              </li> 
+            </ul>
+          </div>      
+        )
+}
+
 
 export default ItemToSell;

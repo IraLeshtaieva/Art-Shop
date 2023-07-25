@@ -13,6 +13,16 @@
     background-color: #360b53;
     min-height: 20px;
     width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.header-image {
+    position: absolute;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    background-color:#f0ec02;
 }
 
 .content {
