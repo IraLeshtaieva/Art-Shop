@@ -36,7 +36,10 @@ function App() {
     { photo: require('./item-postcard-10.jpg'), size: "10x15", type: "postcard", price: 10, description: "City postcard with a house", id: 16 },
     { photo: require('./item-postcard-11.jpg'), size: "10x15", type: "postcard", price: 10, description: "New Year's postcard with a glass bowl", id: 17 },
     { photo: require('./item-painting-4.jpg'), size: "42x30", type: "painting", price: 35, description: "Landscape with bridge and lily pond(based on Monet)", id: 18 },
-    { photo: require('./item-painting-5.jpg'), size: "10x15", type: "painting", price: 11, description: "Pink flower", id: 19 }
+    { photo: require('./item-painting-5.jpg'), size: "10x15", type: "painting", price: 11, description: "Pink flower", id: 19 },
+    { photo: require('./item-postcard-12.jpg'), size: "10x15", type: "postcard", price: 15, description: "Peony", id: 20 },
+    { photo: require('./item-postcard-13.jpg'), size: "10x15", type: "postcard", price: 20, description: "Poppies ", id: 21 },
+    { photo: require('./item-postcard-14.jpg'), size: "10x15", type: "postcard", price: 10, description: "Tulips in rubber boots", id: 22 },
   ]
 
   const visiblePictures = items.filter((picture) => {

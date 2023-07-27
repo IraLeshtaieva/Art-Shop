@@ -1,10 +1,10 @@
 import './items-to-sell.css';
 
-import { useState } from 'react';
+import QuantityButton from '../quantity-button/quantityButton';
+
 
 const ItemToSell = ({photo, type, size, description, price, id, itemsInBasket, onBasket}) => {
 
-const [counter, setCounter] = useState(1);
 
 const toUrl = (type) => {
     if (type === "magnet") {
@@ -24,50 +24,28 @@ const isItemInBasket = itemsInBasket.find(element => element.itemId===id);
 const text =  isItemInBasket === undefined ? "Put item in" : "Delete from";
 const clazz = isItemInBasket === undefined ? "btn-new" : "btn-new-delete";
 
-function showButton(isItemInBasket) { //непонятно со скобочками и аргументами
-  if (isItemInBasket !== undefined) {  //ПОЧЕМУ НАОБОРОТ????
-    return (
-      <div className="buttonField">
-                <button 
-                    className="button"
-                    onClick={addNumber}
-                    type="button">
-                        + 
-                </button>
-                <button 
-                    className="button"> {counter} </button>
-                <button 
-                    className="button"
-                    onClick={deleteNumber}
-                    type="button">
-                        - 
-                </button>
-                </div>
-    )
-    } else {
-      return null;
-    }
+function showButton() { 
+  if (isItemInBasket !== undefined) {
+    return <QuantityButton/>;
+  } else {
+    return null;
   }
-
-
+}
+      
+function filterItermsList(itemsList) {
+  return itemsList.filter(
+    element => element.itemId!==id
+  ) 
+}
 
 function onClickAdd() {
   if (isItemInBasket === undefined) {
       onBasket(itemsList => [...itemsList, {itemId:id}])
   } else {
-    onBasket(itemsList => itemsList.filter(element => element.itemId!==id))
+    onBasket(filterItermsList)
   }
 } 
-
-
-function addNumber() {
-    setCounter(counter => counter + 1);
-}
-
-function deleteNumber() {
-    setCounter(counter => counter - 1);
-}
-      
+    
   return (
 
       <div className="divTable"><img className='photo' src={String(photo)} alt="magnet with view" />
@@ -89,6 +67,4 @@ function deleteNumber() {
           </div>      
         )
 }
-
-
 export default ItemToSell;
