@@ -6,42 +6,7 @@
   flex-direction: column;
 }
 
-.App-logo {
-  height: 10vmin;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 10vmin;
-  margin-left:50% ;
 
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-.App-header {
-  background-image: url(artist-workshop.jpg);
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column; /* порядок показания значка и текста */
-  font-style: italic;
-  color: rgb(210, 196, 219);
-  width: 100%;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .App-content {
   min-height: 0;

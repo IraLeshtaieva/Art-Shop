@@ -1,5 +1,4 @@
 
-import logo2 from './logo2.svg';
 import './App.css';
 import Header from './components/header/header';
 import Body from './components/body/body';
@@ -68,10 +67,7 @@ function App() {
   return (
 
     <div className='App'>
-      <header className="App-header">
-        <img src={logo2} className="App-logo" alt="logo" />
-        <Header/>
-      </header>
+      <Header/>
       <div className="App-content">
         <div className='App-menu'>
           <Body className='App-menu-row1' /> 
