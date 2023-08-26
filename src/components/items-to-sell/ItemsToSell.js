@@ -3,7 +3,7 @@ import './items-to-sell.css';
 import QuantityButton from '../quantity-button/quantityButton';
 
 
-const ItemToSell = ({photo, type, size, description, price, id, itemsInBasket, onBasket}) => {
+const ItemToSell = ({photo, type, size, description, price, id, itemsInBasket, setItemsList}) => {
 
 
 const toUrl = (type) => {
@@ -26,13 +26,13 @@ const clazz = isItemInBasket === undefined ? "btn-new" : "btn-new-delete";
 
 function showButton() { 
   if (isItemInBasket !== undefined) {
-    return <QuantityButton/>;
+    return <QuantityButton currentItem = {isItemInBasket} setItemsList={setItemsList}/>;
   } else {
     return null;
   }
 }
       
-function filterItermsList(itemsList) {
+function filterItemsList(itemsList) {
   return itemsList.filter(
     element => element.itemId!==id
   ) 
@@ -40,9 +40,9 @@ function filterItermsList(itemsList) {
 
 function onClickAdd() {
   if (isItemInBasket === undefined) {
-      onBasket(itemsList => [...itemsList, {itemId:id}])
+    setItemsList(itemsList => [...itemsList, {itemId:id, itemQuantity:1}])
   } else {
-    onBasket(filterItermsList)
+    setItemsList(filterItemsList)
   }
 } 
     

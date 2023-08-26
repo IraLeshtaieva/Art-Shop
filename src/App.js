@@ -8,6 +8,11 @@ import ItemToSell from './components/items-to-sell/ItemsToSell';
 import BasketButton from './components/basket-button/basketButton';
 import FindForm from './components/find-form/findForm';
 
+
+
+
+
+
 import { useState } from 'react';
 
 
@@ -52,9 +57,9 @@ function App() {
   const elements = visiblePictures.map(item => {
     return (
       <ItemToSell
-        key={item.id}
-        {...item}
-        onBasket={setItemsList}
+        key={item.id}   //запуталась что здесь происходит
+        {...item}   //запуталась что здесь происходит
+        setItemsList={setItemsList}
         itemsInBasket={itemsList}
       />
     )
@@ -70,7 +75,8 @@ function App() {
       <div className="App-content">
         <div className='App-menu'>
           <Body className='App-menu-row1' /> 
-          <BasketButton className='App-menu-row2' itemsPutedBasket={itemsList.length}/>
+          <BasketButton className='App-menu-row2' itemsPutedBasket={itemsList.map((item) => item.itemQuantity)
+                                                                             .reduce((sum, currenrelem) => sum + currenrelem, 0)}/>
           <FindForm/>
         </div>
         <div className='App-elements'>

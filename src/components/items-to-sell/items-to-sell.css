@@ -27,7 +27,7 @@
     border: none;
     text-decoration: none;
     color: white;
-    background: #9d79a1;
+    background: linear-gradient(to right, #9d79a1, #674f69);
     box-shadow: 0 5px 0 #473a52;
     align-items: end; /* не работает потому что гдето инлайн блок
     display: block;*/
@@ -45,7 +45,7 @@
     border: none;
     text-decoration: none;
     color: white;
-    background: rgb(243, 110, 165);
+    background: linear-gradient(to right, #f38bb6, #f13483);
     box-shadow: 0 5px 0 rgb(173, 80, 119);
     align-items: end; /* не работает потому что гдето инлайн блок
     display: block;*/

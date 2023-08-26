@@ -1,6 +1,6 @@
 .header {
     padding: 20px;
-    background-color: #b68db4;
+    background: linear-gradient(to right, #b68db4, rgb(124, 92, 146));
     border-radius: 4px;
     box-shadow: 15px 15px 30px rgba(0,0,0, .15);
     max-width: 100%;

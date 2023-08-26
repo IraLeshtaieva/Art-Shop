@@ -1,17 +1,27 @@
 import './quantity-button.css';
 
-import { useState } from 'react';
 
-const QuantityButton = () => {
+const QuantityButton = ({currentItem, setItemsList}) => {
 
-    const [counter, setCounter] = useState(1);
 
     function addNumber() {
-        setCounter(currentState => currentState + 1);
+        setItemsList((itemsList) => itemsList.map((item) => {
+            if (item.itemId === currentItem.itemId) {
+                return {...item, itemQuantity: item.itemQuantity+1};
+            } else {
+                return item;
+            }
+        }))
     }
 
     function deleteNumber() {
-        setCounter(currentState => currentState > 0 ? currentState - 1 : 0 );
+        setItemsList((itemsList) => itemsList.map((item) => {
+            if (item.itemId === currentItem.itemId && item.itemQuantity > 0) {
+                return {...item, itemQuantity: item.itemQuantity-1};
+            } else {
+                return item;
+            }
+        }))
     }  
     
     return (
@@ -23,7 +33,7 @@ const QuantityButton = () => {
                             + 
                     </button>
                     <button 
-                        className="button"> {counter} </button>
+                        className="button"> {currentItem.itemQuantity} </button>
                     <button 
                         className="button"
                         onClick={deleteNumber}
@@ -33,4 +43,5 @@ const QuantityButton = () => {
                     </div>
         )
 }
+
 export default QuantityButton;
