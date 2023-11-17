@@ -45,12 +45,15 @@
   display: block;
   border-radius: 50px;
   border-inline-start-color: violet;
-  width: 5vmin;
-  height: 5vmin;
-  background-color: #e0c0df;
-  border: 2px solid #64509c; /* Green */
-  box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+  width: 30px;
+  height: 30px;
+  background-color:  rgb(219, 131, 205);
+  border: 0px solid #64509c; /* Green */
+  position: absolute;
+  padding: 0;
+  margin: 10px;
 }
+
 
 
   
